@@ -1,4 +1,6 @@
 import pytest
+
+# Import the functions directly
 from app import add, subtract, multiply, divide
 
 def test_add():
