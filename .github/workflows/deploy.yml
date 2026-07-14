@@ -12,6 +12,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production  # Requires approval
     
     steps:
     - uses: actions/checkout@v4
@@ -25,9 +26,9 @@ jobs:
     
     - name: Sync files to S3
       run: |
-        aws s3 sync . s3://kumneger-github-actions-site/ --exclude ".git/*" --exclude ".github/*"
+        aws s3 sync . s3://yourname-github-actions-site/ --exclude ".git/*" --exclude ".github/*"
     
     - name: Display deployment URL
       run: |
-        echo "Deployment completed to s3://kumneger-github-actions-site"
-        echo "Website URL: http://kumneger-github-actions-site.s3-website-us-east-1.amazonaws.com"
+        echo "Deployment completed to s3://yourname-github-actions-site"
+        echo "Website URL: http://yourname-github-actions-site.s3-website-us-east-1.amazonaws.com"
